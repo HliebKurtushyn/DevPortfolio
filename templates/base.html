@@ -6,13 +6,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     {% block head %}{% endblock %}
-    {# <link href="{% static 'css/base.css' %}" rel="stylesheet"> #}
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
 <body>
     <div>
-        <a href="/">Home</a>
-        <a href="{% url 'about' %}">About us</a>
-        <a href="{% url 'contacts' %}">Contacts</a>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}" 
+                    class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                    Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" 
+                    class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                    Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'contacts' %}" 
+                    class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
+                    Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     {% block content %}{% endblock %}

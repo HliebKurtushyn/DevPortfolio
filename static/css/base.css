@@ -1,3 +1,26 @@
 body {
-    background-color: #bf7c18;
+    background-color: #ffd18c;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #18b9bf;
+}
+
+.active {
+    color: blue;
 }
