@@ -11,6 +11,8 @@
 <body>
     <div>
         <a href="/">Home</a>
+        <a href="{% url 'about' %}">About us</a>
+        <a href="{% url 'contacts' %}">Contacts</a>
     </div>
 
     {% block content %}{% endblock %}

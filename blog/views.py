@@ -19,11 +19,3 @@ def home(request):
     #  Post.objects.get(content="Hello")  object, instance   <- Get must return 1 instance, returned multiple instead
     #  Post.objects.get(id=2)
     return render(request, "blog/home.html", {"posts": posts})
-
-
-def about_view(request):
-    return render(request, 'blog/about/about.html')
-
-
-def contacts_view(request):
-    return render(request, 'blog/about/contacts.html')
