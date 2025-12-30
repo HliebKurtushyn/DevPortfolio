@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {# Стилі згенеровані за допомогою ШІ. Поки нехай буде лиш картка. #}
+    <style>
+        /* Основний контейнер картки */
+        .card {
+            width: 350px;
+            padding: 25px;
+            background: #1e1e26; /* Темний фон */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.3s ease;
+            margin: 20px auto;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Ефект підняття при наведенні */
+        }
+
+        /* Заголовок (Ім'я) */
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71); /* Градієнтний текст */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* Блок з текстом опису */
+        .info-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+
+        /* Контакти */
+        .contacts {
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .contacts li {
+            list-style: none; /* Прибираємо маркери */
+        }
+
+        .contact {
+            display: block;
+            padding: 0;
+            margin: 5px 0;
+            font-size: 13px;
+            color: #4facfe; /* Колір для акценту на контактах */
+        }
+
+        /* Кнопка */
+        .contact-button {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s ease, letter-spacing 0.2s ease;
+        }
+
+        .contact-button:hover {
+            opacity: 0.9;
+            letter-spacing: 1px; /* Ефект при наведенні */
+        }
+    </style>
+
+
+    {# Описував та зробив структуру картки я повністю сам #}
+    <h1>About us - Contacts</h1>
+    
+    <div class="card" id="main-card">
+        <h1>Hlieb</h1 class="name">
+        <div class="info">
+            <p class="info-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Iure dicta repudiandae tempore? Doloremque, minima in?
+                Amet quod quis consequatur iure atque fugit sed!
+                Dignissimos rem quibusdam expedita molestiae? Eaque, expedita!
+            </p>
+
+            <div class="contacts">
+                <li>
+                    <ul class="contact">Phone: +3801231231234</ul>
+                    <ul class="contact">Email: hlieb@example.com</ul>
+                </li>
+            </div>
+        </div>
+
+        <div class="contact-button">Contact me!</div>
+    </div>
+{% endblock %}
