@@ -4,8 +4,6 @@ from .models import Post, Article
 
 
 @admin.register(Post)
-@admin.register(Article)
-
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'created_at', 'updated_at']
     list_filter = ['created_at', 'updated_at']
@@ -14,6 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     readonly_fields = ['content', 'created_at', 'updated_at']
 
 
+@admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'views', 'likes', 'is_featured', 'published_at']
     list_filter = ['is_featured', 'published_at', 'author', 'tags']
@@ -33,7 +32,7 @@ class ArticleAdmin(admin.ModelAdmin):
         queryset.update(views=0)
 
     @admin.action(description='Export titles to text file') # Тут допоміг ШІ
-    def export_titles(self, queryset):
+    def export_titles(self, request, queryset):
         from django.http import HttpResponse
 
         titles = "\n".join([article.title for article in queryset])
